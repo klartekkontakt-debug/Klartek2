@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlarTek - AI-løsninger for bedrifter</title>
+    <meta name="description" content="KlarTek hjelper bedrifter med å ta i bruk AI-teknologi som chatbot, telefonsvarer og inbox/calender manager">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563eb",
+                        secondary: "#1e40af",
+                        accent: "#3b82f6"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-primary rounded-lg"></div>
+                    <span class="text-xl font-bold text-gray-800">KlarTek</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hjem" class="text-gray-600 hover:text-primary transition-colors">Hjem</a>
+                    <a href="#tjenester" class="text-gray-600 hover:text-primary transition-colors">Tjenester</a>
+                    <a href="#om-oss" class="text-gray-600 hover:text-primary transition-colors">Om Oss</a>
+                    <a href="#book-mote" class="text-gray-600 hover:text-primary transition-colors">Book Møte</a>
+                </div>
+                
+                <button onclick="window.open('https://calendly.com/noah-lie-rudolfsen', '_blank')" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors">
+                    Book et møte
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="hjem" class="bg-gradient-to-r from-primary to-accent text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Fremtiden er AI-drevet</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">KlarTek hjelper bedrifter med å implementere kraftige AI-løsninger</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="window.open('https://calendly.com/noah-lie-rudolfsen', '_blank')" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Book et møte
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+                        Les mer
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="tjenester" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Våre AI-tjenester</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- AI Chatbot -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-robot text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">AI Chatbot</h3>
+                        <p class="text-gray-600 mb-4">Intelligente chatbot-løsninger som håndterer kundeservice 24/7 med naturlig språkforståelse.</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Automatiser kundeservice
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                24/7 tilgjengelighet
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Flerspråklig støtte
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- AI Telefonsvarer -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-phone-alt text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">AI Telefonsvarer</h3>
+                        <p class="text-gray-600 mb-4">Avanserte telefonsvarere som håndterer innkommende samtaler med menneskelig naturlighet.</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Smart samtalerouting
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Tale-til-tekst transkripsjon
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Personlig stemmevalg
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- AI Inbox & Calendar -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-calendar-alt text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">AI Inbox & Calendar Manager</h3>
+                        <p class="text-gray-600 mb-4">Smart administrasjon av e-post og kalender med automatisk prioritering og svar.</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Automatisk e-postsortering
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Møteplanlegging
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Prioriteringsalgoritmer
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="om-oss" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Om KlarTek</h2>
+                        <p class="text-gray-600 mb-6 text-lg">
+                            Vi i KlarTek er dedikert til å gjøre AI-teknologi tilgjengelig for alle bedrifter. Vårt mål er å forenkle implementeringen av avanserte AI-løsninger som virkelig gjør en forskjell.
+                        </p>
+                        <p class="text-gray-600 mb-8 text-lg">
+                            Med ekspertise i kunstig intelligens og maskinlæring, hjelper vi bedrifter med å automatisere prosesser, forbedre kundeservice og øke effektiviteten.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary mb-2">50+</div>
+                                <div class="text-gray-600">Fornøyde kunder</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary mb-2">24/7</div>
+                                <div class="text-gray-600">Support</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img 
+                            src="https://picsum.photos/600/400?random=1" 
+                            alt="KlarTek team som jobber med AI-teknologi" 
+                            class="rounded-xl shadow-lg"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Meeting Section -->
+        <section id="book-mote" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Klar til å transformere din bedrift med AI?</h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Book et uforpliktende møte med Noah for å diskutere hvordan vi kan hjelpe din bedrift med AI-løs
