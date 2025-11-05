@@ -1,5 +1,98 @@
 
 <!DOCTYPE html>
+<!-- 💬 KlarTek Chatbot -->
+<div id="klartek-chatbot" class="fixed bottom-6 right-6 z-50">
+  <!-- Chat-knapp -->
+  <button id="chat-toggle" class="bg-indigo-600 text-white rounded-full p-4 shadow-lg hover:bg-indigo-700 transition">
+    💬
+  </button>
+
+  <!-- Chat-vindu -->
+  <div id="chat-window" class="hidden flex-col w-80 h-96 bg-white shadow-2xl rounded-2xl overflow-hidden border border-gray-200">
+    <!-- Toppfelt -->
+    <div class="bg-indigo-600 text-white p-4 flex justify-between items-center">
+      <span class="font-semibold">KlarTek Assistent</span>
+      <button id="close-chat" class="text-white text-lg font-bold">×</button>
+    </div>
+
+    <!-- Meldinger -->
+    <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-sm text-gray-800">
+      <div class="bg-gray-100 p-3 rounded-xl w-fit max-w-[80%]">
+        Hei! 👋 Jeg er KlarTek-assistenten. Hvordan kan jeg hjelpe deg i dag?
+      </div>
+    </div>
+
+    <!-- Inputfelt -->
+    <div class="p-3 border-t border-gray-200 flex">
+      <input id="user-input" type="text" placeholder="Skriv en melding..." class="flex-1 border border-gray-300 rounded-l-xl p-2 text-sm focus:outline-none">
+      <button id="send-btn" class="bg-indigo-600 text-white px-4 rounded-r-xl hover:bg-indigo-700 transition">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Elementer
+  const chatToggle = document.getElementById("chat-toggle");
+  const chatWindow = document.getElementById("chat-window");
+  const closeChat = document.getElementById("close-chat");
+  const sendBtn = document.getElementById("send-btn");
+  const userInput = document.getElementById("user-input");
+  const chatMessages = document.getElementById("chat-messages");
+
+  // Forhåndsdefinerte svar
+  const responses = {
+    "hei": "Hei der! 😊 Hvordan kan jeg hjelpe deg?",
+    "tjenester": "Vi tilbyr AI Chatbot, AI Telefonsvarer og AI Inbox & Kalender. Hva er du interessert i?",
+    "kontakt": "Du kan kontakte oss på <a href='mailto:klartekkontakt@gmail.com' class='text-indigo-600 underline'>klartekkontakt@gmail.com</a> 📩",
+    "møte": "Du kan booke et møte her: <a href='https://calendly.com/noah-lie-rudolfsen/30min' target='_blank' class='text-indigo-600 underline'>Book et møte</a> 🗓️",
+    "default": "Beklager, jeg forstod ikke helt. Prøv å spørre om våre tjenester, kontakt eller møtebooking."
+  };
+
+  // Åpne/lukke chat
+  chatToggle.addEventListener("click", () => {
+    chatWindow.classList.toggle("hidden");
+  });
+  closeChat.addEventListener("click", () => {
+    chatWindow.classList.add("hidden");
+  });
+
+  // Send melding
+  sendBtn.addEventListener("click", sendMessage);
+  userInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") sendMessage();
+  });
+
+  function sendMessage() {
+    const msg = userInput.value.trim();
+    if (!msg) return;
+    addMessage(msg, "user");
+    userInput.value = "";
+
+    // Svar fra bot
+    const lower = msg.toLowerCase();
+    let reply = responses["default"];
+    for (const key in responses) {
+      if (lower.includes(key)) {
+        reply = responses[key];
+        break;
+      }
+    }
+
+    setTimeout(() => addMessage(reply, "bot"), 500);
+  }
+
+  function addMessage(text, sender) {
+    const div = document.createElement("div");
+    div.className = sender === "user"
+      ? "bg-indigo-600 text-white p-3 rounded-xl ml-auto w-fit max-w-[80%]"
+      : "bg-gray-100 p-3 rounded-xl w-fit max-w-[80%]";
+    div.innerHTML = text;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+</script>
+<!-- 💬 Slutt på chatbot -->
+
 <html lang="no">
 <head>
     <base target="_self">
